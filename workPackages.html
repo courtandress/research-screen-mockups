@@ -33,6 +33,10 @@
             <h5 class="card-title">Work Package A</h5>
             <h6 class="card-subtitle mb-2 text-muted">Started on 12/15</h6>
             <p class="card-text">Awaiting consultation</p>
+            <button
+              class="btn btn-primary"
+              onclick="workPackage(event)"
+            >Edit</button>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -40,6 +44,10 @@
             <h5 class="card-title">Work Package B</h5>
             <h6 class="card-subtitle mb-2 text-muted">Started on 12/15</h6>
             <p class="card-text">In Progress</p>
+            <button
+              class="btn btn-primary"
+              onclick="workPackage(event)"
+            >Edit</button>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -47,6 +55,14 @@
             <h5 class="card-title">Work Package C</h5>
             <h6 class="card-subtitle mb-2 text-muted">Started on 12/15</h6>
             <p class="card-text">Report ready</p>
+            <button
+              class="btn btn-primary"
+              onclick="workPackage(event)"
+            >Edit</button>
+            <button
+              class="btn btn-primary"
+              onclick="recommend(event)"
+            >View Report</button>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -54,6 +70,14 @@
             <h5 class="card-title">Work Package D</h5>
             <h6 class="card-subtitle mb-2 text-muted">Started on 12/15</h6>
             <p class="card-text">Report ready</p>
+            <button
+              class="btn btn-primary"
+              onclick="workPackage(event)"
+            >Edit</button>
+            <button
+              class="btn btn-primary"
+              onclick="recommend(event)"
+            >View Report</button>
           </div>
         </div>
       </form>
@@ -68,6 +92,11 @@
       function back (event) {
         event.preventDefault();
         window.location.href = "./dashboard.html"
+      }
+
+      function recommend (event) {
+        event.preventDefault();
+        window.location.href = './recommendationReport.html';
       }
     </script>
   </body>

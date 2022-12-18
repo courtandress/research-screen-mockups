@@ -1,9 +1,0 @@
-.main {
-    padding: 4em;
-    flex: 1 1 auto;
-}
-
-.recommendation-block {
-    display: flex;
-    flex-direction: column;
-}

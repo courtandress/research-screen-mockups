@@ -12,6 +12,18 @@
         padding: 4em;
         flex: 1 1 auto;
       }
+
+      #biometric-technology-selection {
+        padding: 1rem 0;
+      }
+
+      #biometric-technology-selection .btn {
+        width: 10rem;
+      }
+
+      #biometric-technology-selection .form-check {
+        margin-bottom: 2rem;
+      }
     </style>
 
     <title>Biometric Request - Biometric Technology Selection App</title>
@@ -62,21 +74,8 @@
         </div>
         <div class="col-md-12 pt-4 pb-4">
           <legend>Biometric Technologies for Consideration</legend>
-          <div class="form-check form-check-inline">
-            <input type="checkbox" class="btn-check form-check-input" id="input-1" autocomplete="off" checked>
-            <label class="btn btn-outline-primary form-check-label" for="input-1">Fingerprinting</label><br>
-          </div>
-          <div class="form-check form-check-inline">
-            <input type="checkbox" class="btn-check form-check-input" id="input-2" autocomplete="off">
-            <label class="btn btn-outline-primary form-check-label" for="input-2">Facial Recognition</label><br>
-          </div>
-          <div class="form-check form-check-inline">
-            <input type="checkbox" class="btn-check" id="input-3" autocomplete="off">
-            <label class="btn btn-outline-primary" for="input-3">Retinal Scanning</label><br>
-          </div>
-          <div class="form-check form-check-inline">
-            <input type="checkbox" class="btn-check" id="input-4" autocomplete="off">
-            <label class="btn btn-outline-primary" for="input-4">Gait Analysis</label><br>
+          <div id="biometric-technology-selection">
+            Loading...
           </div>
         </div>
         <div class="col-md-12">
@@ -120,6 +119,33 @@
         event.preventDefault();
         window.location.href = "./biometricRequest.02.html";
       }
+
+      function populateBiometrics () {
+        var x = document.getElementById('biometric-technology-selection');
+
+        x.innerHTML = '';
+
+        var biometricTechnologies = [
+          'Facial',
+          'Iris',
+          'Fingerprint',
+          'Palm Print',
+          'Voice',
+        ].sort();
+
+        for (var i = 0; i < biometricTechnologies.length; i++) {
+          var isChecked = i === 0 ? 'checked' : '';
+
+          x.innerHTML += `
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="btn-check form-check-input" id="input-${i}" autocomplete="off" ${isChecked}>
+              <label class="btn btn-outline-primary form-check-label" for="input-${i}">${biometricTechnologies[i]}</label><br>
+            </div>
+          `;
+        }
+      }
+
+      populateBiometrics();
     </script>
   </body>
 </html>

@@ -34,9 +34,9 @@
             class="btn btn-primary"
             onclick="biometricRequest(event)"
           >+ New</button>
-          <button
+          <!-- <button
             class="btn btn-primary"
-          >Refresh List</button>
+          >Refresh List</button> -->
         </div>
         <div class="col-12">
           <h3>In Progress</h3>
@@ -80,7 +80,7 @@
               >Edit</button>
               <button
                 class="btn btn-link"
-                onclick="recommend(event)"
+                onclick="recommend(event, 'Biometric Request C')"
               >View Recommendations</button>
             </div>
           </div>
@@ -95,7 +95,7 @@
               >Edit</button>
               <button
                 class="btn btn-link"
-                onclick="recommend(event)"
+                onclick="recommend(event, 'Biometric Request D')"
               >View Recommendations</button>
             </div>
           </div>
@@ -133,9 +133,9 @@
         window.location.href = "./dashboard.html"
       }
 
-      function recommend (event) {
+      function recommend (event, requestName) {
         event.preventDefault();
-        window.location.href = './recommendationReport.html';
+        window.location.href = `./recommendationReport.html?requestName=${requestName}`;
       }
 
       function profile (event) {

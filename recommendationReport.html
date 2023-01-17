@@ -31,31 +31,47 @@
             onclick="back(event)"
           ><i class="fa-solid fa-xmark"></i></button>
         </div>
+        <div class="col-12">
+          <hr />
+          <h2 id="request-name"></h2>
+        </div>
         <div class="col-md-12 recommendation-block">
           <h3 class="float-start">Recommendation #1</h3>
           <div class="p-3">
             <h4>Summary</h4>
-            <p>blah blah blah</p>
+            <pre>
+blah blah blah
+            </pre>
             <h4>Justification</h4>
-            <p>blah blah blah</p>
+            <pre>
+blah blah blah
+            </pre>
           </div>
         </div>
         <div class="col-md-12 recommendation-block">
           <h3 class="float-start">Recommendation #2</h3>
           <div class="p-3">
             <h4>Summary</h4>
-            <p>blah blah blah</p>
+            <pre>
+blah blah blah
+            </pre>
             <h4>Justification</h4>
-            <p>blah blah blah</p>
+            <pre>
+blah blah blah
+            </pre>
           </div>
         </div>
         <div class="col-md-12 recommendation-block">
           <h3 class="float-start">Recommendation #3</h3>
           <div class="p-3">
             <h4>Summary</h4>
-            <p>blah blah blah</p>
+            <pre>
+blah blah blah
+            </pre>
             <h4>Justification</h4>
-            <p>blah blah blah</p>
+            <pre>
+blah blah blah
+            </pre>
           </div>
         </div>
         <div class="col-md-12">
@@ -98,6 +114,12 @@
         event.preventDefault();
         window.location.href = "./dashboard.html"
       }
+
+      window.addEventListener('load', function() {
+        const queryParams = new URLSearchParams(window.location.search);
+
+        document.getElementById('request-name').innerHTML = queryParams.get('requestName');
+      }, false);
     </script>
   </body>
 </html>

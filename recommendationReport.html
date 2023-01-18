@@ -16,6 +16,11 @@
       .recommendation-block {
         display: flex;
         flex-direction: column;
+        padding: 1em;
+      }
+
+      .recommendation-block.top-recommendation p {
+        font-size: 1.25rem;
       }
     </style>
 
@@ -25,50 +30,31 @@
     <div class="main">
       <form class="row g-3">
         <div class="col-12">
-          <h1 class="float-start">Recommendation Report</h1>
+          <h1
+            class="float-start"
+            id="request-name"
+          ></h1>
           <button
             class="btn btn-light float-end fs-1"
             onclick="back(event)"
           ><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <div class="col-12">
-          <hr />
-          <h2 id="request-name"></h2>
-        </div>
-        <div class="col-md-12 recommendation-block">
-          <h3 class="float-start">Recommendation #1 - Iris</h3>
+        <div class="card col-md-12 recommendation-block top-recommendation">
+          <h3 class="float-start"><strong>Top Recommendation - Iris</strong></h3>
           <div class="p-3">
-            <pre>
-Iris recognition technology is the highest recommended biometric technology
-for your facility due to the required protection of safety critical assets, 
-the ability to read the biometric while the individual is at rest, and the 
-primary usage of the biometric technology being indoors.
-            </pre>
+            <p>Iris recognition technology is the highest recommended biometric technology for your facility due to the required protection of safety critical assets, the ability to read the biometric while the individual is at rest, and the primary usage of the biometric technology being indoors.</p>
           </div>
         </div>
-        <div class="col-md-12 recommendation-block">
-          <h3 class="float-start">Recommendation #2 - Facial</h3>
+        <div class="card col-md-6 recommendation-block">
+          <h4 class="float-start">Alternative #1 - Facial</h4>
           <div class="p-3">
-            <pre>
-Facial recognition technology is the second highest recommended biometric 
-technology for your facility due to the controlled environment (indoor and 
-individual at rest) mitigating many concerns around facial recognition. The 
-probability of required personal protective equipment, such as hard hats, 
-ear protection, and safety glasses lowered the recommendation score for 
-facial recognition at your facility.
-            </pre>
+            <p>Facial recognition technology is the second highest recommended biometric technology for your facility due to the controlled environment (indoor and individual at rest) mitigating many concerns around facial recognition. The probability of required personal protective equipment, such as hard hats, ear protection, and safety glasses lowered the recommendation score for facial recognition at your facility.</p>
           </div>
         </div>
-        <div class="col-md-12 recommendation-block">
-          <h3 class="float-start">Recommendation #3 - Voice</h3>
+        <div class="card col-md-6 recommendation-block">
+          <h4 class="float-start">Alternative #2 - Voice</h4>
           <div class="p-3">
-            <pre>
-Voice recognition technology is the third highest recommended biometric 
-technology as there is low levels of ambient noise and little impact with 
-personal protective equipment. The possibility of using a biometric tech-
-nology without a second authentication factor significantly lowered the 
-recommendation score for voice recognition at your facility. 
-            </pre>
+            <p>Voice recognition technology is the third highest recommended biometric technology as there is low levels of ambient noise and little impact with personal protective equipment. The possibility of using a biometric tech- nology without a second authentication factor significantly lowered the recommendation score for voice recognition at your facility.</p>
           </div>
         </div>
         <div class="col-md-12">
@@ -115,7 +101,7 @@ recommendation score for voice recognition at your facility.
       window.addEventListener('load', function() {
         const queryParams = new URLSearchParams(window.location.search);
 
-        document.getElementById('request-name').innerHTML = queryParams.get('requestName');
+        document.getElementById('request-name').innerHTML = `${queryParams.get('requestName')} - Recommendation Report`;
       }, false);
     </script>
   </body>
